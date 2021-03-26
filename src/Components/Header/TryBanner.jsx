@@ -1,4 +1,5 @@
 import "./TryBanner.scss";
+import TryItForm from "../Forms/TryItForm";
 
 function TryBanner() {
   return (
@@ -7,6 +8,7 @@ function TryBanner() {
         Unlimited films, TV programmes and more.
       </h1>
       <h2 className="try-banner-subtitle">Watch anywhere. Cancel anytime.</h2>
+      <TryItForm />
     </div>
   );
 }

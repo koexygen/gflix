@@ -1,6 +1,7 @@
 .header--navbar {
   display: flex;
-  margin: 0 50px;
+  margin: 0 3.5rem;
+  padding-top: 20px;
   height: 100px;
   justify-content: space-between;
   align-items: center;
@@ -25,7 +26,7 @@
   }
 
   &-sign-in {
-    background-color: #e50914;
+    background-color: var(--primary-red);
     display: block;
     width: 85px;
     height: auto;
@@ -39,7 +40,7 @@
     font-size: 1rem;
 
     &:hover {
-      background: #f40612;
+      background: var(--primary-red-hover);
     }
   }
 }

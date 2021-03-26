@@ -11,16 +11,15 @@
     font-size: 4rem;
     font-weight: 500;
     margin: auto;
+    line-height: 1.1;
 
     @media (max-width: 450px) {
       font-size: 1.75rem;
     }
 
-    @media only screen and (min-width: 950px) and (max-width: 1449px)
-    {
+    @media only screen and (min-width: 950px) and (max-width: 1449px) {
       font-size: 3.125rem;
     }
-
   }
 
   &-subtitle {
