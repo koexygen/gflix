@@ -7,6 +7,7 @@ function Header() {
     <div className="header">
       <Navbar />
       <TryBanner />
+      <div className="header--overlay"></div>
     </div>
   );
 }

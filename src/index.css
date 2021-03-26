@@ -1,6 +1,8 @@
 :root {
   --primary-red: #e50914;
   --primary-red-hover: #f40612;
+  --warning-green: #5fa53f;
+  --warning-orange: #ffa00a;
 }
 
 @font-face {

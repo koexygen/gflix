@@ -15,14 +15,73 @@ form {
     display: flex;
     flex-direction: row;
     margin: 0 auto;
-  }
 
-  input {
-    min-width: 500px;
-    border: 0;
-    padding: 10px;
-    height: 70px;
-    box-sizing: border-box;
+    .input-label {
+      max-width: 500px;
+      position: relative;
+
+      label {
+        position: absolute;
+        top: 6px;
+        -webkit-transition: font 0.1s ease, top 0.1s ease,
+          -webkit-transform 0.1s ease;
+        transition: font 0.1s ease, top 0.1s ease, -webkit-transform 0.1s ease;
+        -o-transition: font 0.1s ease, top 0.1s ease, -o-transform 0.1s ease;
+        -moz-transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease,
+          -moz-transform 0.1s ease;
+        left: 10px;
+        color: #8c8c8c;
+        font-weight: 700;
+        font-size: 13px;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+      }
+
+      input {
+        min-width: 500px;
+        height: 70px !important;
+        border: solid 1px #8c8c8c;
+        padding: 10px 10px 0;
+        font-size: 1rem;
+        border-radius: 2px;
+
+        &:focus {
+          border-color: #0071eb;
+          outline: 0;
+
+          &:invalid {
+            border-bottom: 2px solid var(--warning-orange);
+          }
+
+          &:valid {
+            border-bottom: 2px solid var(--warning-green);
+          }
+        }
+
+        &:placeholder-shown + label {
+          position: absolute;
+          top: 50%;
+          left: 10px;
+          color: #8c8c8c;
+          font-weight: 400;
+          font-size: 16px;
+          -webkit-transition: font 0.1s ease, top 0.1s ease,
+            -webkit-transform 0.1s ease;
+          transition: font 0.1s ease, top 0.1s ease, -webkit-transform 0.1s ease;
+          -o-transition: font 0.1s ease, top 0.1s ease, -o-transform 0.1s ease;
+          -moz-transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease,
+            -moz-transform 0.1s ease;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+      }
+    }
   }
 
   button {
