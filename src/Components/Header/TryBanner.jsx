@@ -5,10 +5,11 @@ function TryBanner() {
   return (
     <div className="try-banner">
       <h1 className="try-banner-title">
-        Unlimited films, TV programmes and more.
+        Unlimited movies, TV shows, and more.
       </h1>
       <h2 className="try-banner-subtitle">Watch anywhere. Cancel anytime.</h2>
       <TryItForm />
+      <h3>Only new members are eligible for this offer.</h3>
     </div>
   );
 }

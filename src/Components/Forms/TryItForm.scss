@@ -2,16 +2,23 @@ form {
   display: flex;
   justify-content: center;
   height: 100%;
-  margin-top: 20px;
   flex-wrap: wrap;
+  max-width: 950px;
+  padding-top: 0.85rem;
 
   @media (max-width: 1000px) {
     flex-direction: column;
     align-items: center;
   }
+
+  .input-btn {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+
   input {
-    max-width: 450px;
-    width: 100%;
+    min-width: 500px;
     border: 0;
     padding: 10px;
     height: 70px;
@@ -26,10 +33,18 @@ form {
     color: white;
     text-transform: capitalize;
     padding: 0 32px;
-    font-size: 26px;
-    font-weight: 700;
+    font-weight: 400;
     border: 0;
     cursor: pointer;
+    border-top-left-radius: 0;
+    border-left: 1px solid #333;
+    font-size: 1.875rem;
+    min-height: 70px;
+    min-width: 74px;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 45%);
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 45%);
+    letter-spacing: 0.1px;
 
     img {
       margin-left: 10px;
@@ -55,14 +70,22 @@ form {
 
   h3 {
     color: white;
-    text-align: center;
-    flex-basis: 100%;
+    max-width: none;
+    padding: 0 5%;
     font-size: 1.2rem;
+    margin: 0 auto;
     font-weight: 400;
 
     @media (max-width: 600px) {
       font-size: 16px;
       line-height: 22px;
+    }
+
+    @media only screen and (min-width: 950px) and (max-width: 1449px),
+      only screen and (min-width: 1450px) {
+      max-width: none;
+      padding-bottom: 20px;
+      font-size: 1.2rem;
     }
   }
 }
