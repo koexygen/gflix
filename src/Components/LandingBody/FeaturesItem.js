@@ -14,7 +14,21 @@ function FeaturesItem() {
         </div>
 
         <div className="features-item--panel">
-          <img src={TV} alt="" className="features-item--panel-img" />
+          <div className="features-item--panel-img-video">
+            <img src={TV} alt="" className="features-item--panel-img" />
+            <video
+              className="our-story-card-video"
+              autoPlay
+              playsInline
+              muted
+              loop
+            >
+              <source
+                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
+                type="video/mp4"
+              />
+            </video>
+          </div>
         </div>
       </div>
     </div>
