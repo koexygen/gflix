@@ -3,6 +3,7 @@
   --primary-red-hover: #f40612;
   --warning-green: #5fa53f;
   --warning-orange: #ffa00a;
+  --bg-color: #000;
 }
 
 @font-face {
@@ -56,5 +57,6 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Netflix Sans',sans-serif,-apple-system;
+  background-color: var(--bg-color);
 }
 

@@ -24,12 +24,12 @@
 
   &--overlay {
     position: absolute;
-    height: 769.781px;
+    height: 775.781px;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.2);
     background-image: -webkit-gradient(
       linear,
       left bottom,
@@ -63,5 +63,6 @@
       rgba(0, 0, 0, 0) 60%,
       rgba(0, 0, 0, 0.8) 100%
     );
+    border-bottom: 8px solid #222;
   }
 }
