@@ -1,5 +1,12 @@
 import "./FeaturesItem.scss";
-import videoForTV from "../../Assets/videos/video-tv-0819.m4v";
+
+const videoStyle = {
+  video2: {
+    maxWidth: "63%",
+    maxHeight: "47%",
+    top: "35%",
+  },
+};
 
 function FeaturesItem(props) {
   return (
@@ -34,8 +41,9 @@ function FeaturesItem(props) {
                 playsInline
                 muted
                 loop
+                style={props.videoNum === 2 ? videoStyle.video2 : null}
               >
-                <source src={videoForTV} type="video/mp4" />
+                <source src={props.videoSrc} type="video/mp4" />
               </video>
             </div>
           ) : (
