@@ -4,7 +4,10 @@ import Logo from "../../Assets/images/logo.svg";
 export const Navbar = () => (
   <div className="header--navbar">
     <img src={Logo} alt="Gflix Logo" className="header--navbar-logo" href="#" />
-    <a href="#" className="header--navbar-sign-in">
+    <a
+      href="https://koexygen.github.io/gflix/"
+      className="header--navbar-sign-in"
+    >
       Sign In
     </a>
   </div>

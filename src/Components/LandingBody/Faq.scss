@@ -1,0 +1,26 @@
+.faq {
+  display: flex;
+  border-bottom: 8px solid #222;
+
+  &-title {
+    font-size: 50px;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: white;
+    text-align: center;
+    margin: auto;
+  }
+
+  &--inside {
+    display: flex;
+    padding: 70px 45px;
+    flex-direction: column;
+    max-width: 815px;
+    margin: auto;
+
+    &-border {
+      margin-bottom: 40px;
+    }
+  }
+}
