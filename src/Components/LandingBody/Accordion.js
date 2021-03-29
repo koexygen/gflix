@@ -1,5 +1,5 @@
 import "./Accordion.scss";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import AddIcon from "../../Assets/images/add.png";
 import CloseIcon from "../../Assets/images/close-slim.png";
 
