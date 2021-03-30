@@ -5,6 +5,7 @@ form {
   flex-wrap: wrap;
   max-width: 950px;
   padding-top: 0.85rem;
+  align-self: center;
 
   @media (max-width: 1000px) {
     flex-direction: column;

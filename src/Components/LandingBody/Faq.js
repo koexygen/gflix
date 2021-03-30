@@ -1,6 +1,7 @@
 import "./Faq.scss";
 import Accordion from "./Accordion";
 import faqList from "../../texts/faq.json";
+import TryItForm from "../Forms/TryItForm";
 
 function Faq() {
   return (
@@ -8,11 +9,12 @@ function Faq() {
       <div className="faq--inside">
         <h1 className="faq-title">Frequently Asked Questions</h1>
         <div className="faq--inside-border">
-          {faqList.map((faq) => {
-            return <Accordion header={faq.header} body={faq.body} />;
+          {faqList.map((faq, i) => {
+            return <Accordion header={faq.header} body={faq.body} key={i} />;
           })}
         </div>
       </div>
+      <TryItForm />
     </div>
   );
 }
