@@ -1,0 +1,52 @@
+.footer {
+  display: flex;
+  padding: 70px 0;
+  margin: auto;
+  max-width: 1000px;
+  flex-direction: column;
+
+  @media (max-width: 1000px) {
+    padding: 70px 30px;
+  }
+
+  &-title {
+    font-size: 1.2rem;
+    color: #757575;
+    margin-bottom: 40px;
+  }
+
+  &--row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 15px;
+
+    @media (max-width: 1000px) {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    &-column {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      &-link {
+        color: #757575;
+        margin-bottom: 20px;
+        font-size: 1rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+
+        svg,
+        img {
+          margin-left: 0.5rem;
+        }
+
+        &:hover {
+          color: #757575;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
