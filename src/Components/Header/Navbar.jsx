@@ -1,5 +1,5 @@
 import "./Navbar.scss";
-import Logo from "../../Assets/images/logo.svg";
+import Logo from "../../Assets/images/gflix-logo.png";
 
 export const Navbar = () => (
   <div className="header--navbar">
