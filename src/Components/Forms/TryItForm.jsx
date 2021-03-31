@@ -1,5 +1,6 @@
 import "./TryItForm.scss";
 import RightArrow from "../../Assets/images/right-arrow.png";
+import { Link } from "react-router-dom";
 
 function TryItForm() {
   return (
@@ -20,9 +21,9 @@ function TryItForm() {
             Email address
           </label>
         </div>
-        <button>
+        <Link className="try-button" to="/sign-up">
           Try 30 Days Free <img src={RightArrow} alt="Try Now" />
-        </button>
+        </Link>
       </div>
     </form>
   );

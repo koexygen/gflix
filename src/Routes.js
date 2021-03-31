@@ -1,6 +1,6 @@
 import LandingPage from "./Components/LandingPage/LandingPage";
 import Browse from "./Components/Browse/Browse";
-import Login from "./Components/Login/SignIn";
+import Login from "./Components/Login/Login";
 import SignUp from "./Components/SignUp/SignUp";
 
 const ROUTES = [

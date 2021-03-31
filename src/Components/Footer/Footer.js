@@ -20,6 +20,8 @@ function Footer() {
           >
             Github <FaGithub style={{ fill: "#fff" }} />
           </a>
+        </div>
+        <div className="footer--row-column">
           <a
             href="https://www.linkedin.com/in/gio-chomakhashvili-a739911b9/"
             className="footer--row-column-link"
@@ -27,130 +29,20 @@ function Footer() {
             rel="noreferrer"
           >
             LinkedIn <FaLinkedin style={{ fill: "#0e76a8" }} />
-          </a>
-          <a
-            href="https://www.facebook.com/thekoexygen/"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Facebook <FaFacebook style={{ fill: "#4267B2" }} />
-          </a>
-          <a
-            href="https://www.instagram.com/koexygen/"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Instagram
-            <img
-              src={Instagram}
-              alt=""
-              style={{ width: "1em", height: "1em" }}
-            />
-          </a>
-          <a
-            href="https://api.whatsapp.com/send?phone=995558888884&text=Hey%20Gio%2C%20"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            WhatsApp <FaWhatsapp style={{ fill: "#25D366" }} />
-          </a>
-
-          <a
-            href="mailto: ggiosweb@gmail.com"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Gmail
-            <img src={Gmail} alt="" style={{ width: "1em", height: "1em" }} />
           </a>
         </div>
         <div className="footer--row-column">
           <a
-            href="https://github.com/koexygen"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Github <FaGithub style={{ fill: "#fff" }} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/gio-chomakhashvili-a739911b9/"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn <FaLinkedin style={{ fill: "#0e76a8" }} />
-          </a>
-          <a
             href="https://www.facebook.com/thekoexygen/"
             className="footer--row-column-link"
             target="_blank"
             rel="noreferrer"
           >
             Facebook <FaFacebook style={{ fill: "#4267B2" }} />
-          </a>
-          <a
-            href="https://www.instagram.com/koexygen/"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Instagram
-            <img
-              src={Instagram}
-              alt=""
-              style={{ width: "1em", height: "1em" }}
-            />
-          </a>
-          <a
-            href="https://api.whatsapp.com/send?phone=995558888884&text=Hey%20Gio%2C%20"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            WhatsApp <FaWhatsapp style={{ fill: "#25D366" }} />
-          </a>
-
-          <a
-            href="mailto: ggiosweb@gmail.com"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Gmail
-            <img src={Gmail} alt="" style={{ width: "1em", height: "1em" }} />
           </a>
         </div>
         <div className="footer--row-column">
           <a
-            href="https://github.com/koexygen"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Github <FaGithub style={{ fill: "#fff" }} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/gio-chomakhashvili-a739911b9/"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn <FaLinkedin style={{ fill: "#0e76a8" }} />
-          </a>
-          <a
-            href="https://www.facebook.com/thekoexygen/"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Facebook <FaFacebook style={{ fill: "#4267B2" }} />
-          </a>
-          <a
             href="https://www.instagram.com/koexygen/"
             className="footer--row-column-link"
             target="_blank"
@@ -162,64 +54,10 @@ function Footer() {
               alt=""
               style={{ width: "1em", height: "1em" }}
             />
-          </a>
-          <a
-            href="https://api.whatsapp.com/send?phone=995558888884&text=Hey%20Gio%2C%20"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            WhatsApp <FaWhatsapp style={{ fill: "#25D366" }} />
-          </a>
-
-          <a
-            href="mailto: ggiosweb@gmail.com"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Gmail
-            <img src={Gmail} alt="" style={{ width: "1em", height: "1em" }} />
           </a>
         </div>
         <div className="footer--row-column">
-          <a
-            href="https://github.com/koexygen"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Github <FaGithub style={{ fill: "#fff" }} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/gio-chomakhashvili-a739911b9/"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn <FaLinkedin style={{ fill: "#0e76a8" }} />
-          </a>
-          <a
-            href="https://www.facebook.com/thekoexygen/"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Facebook <FaFacebook style={{ fill: "#4267B2" }} />
-          </a>
-          <a
-            href="https://www.instagram.com/koexygen/"
-            className="footer--row-column-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Instagram
-            <img
-              src={Instagram}
-              alt=""
-              style={{ width: "1em", height: "1em" }}
-            />
-          </a>
+          {" "}
           <a
             href="https://api.whatsapp.com/send?phone=995558888884&text=Hey%20Gio%2C%20"
             className="footer--row-column-link"
@@ -227,8 +65,10 @@ function Footer() {
             rel="noreferrer"
           >
             WhatsApp <FaWhatsapp style={{ fill: "#25D366" }} />
-          </a>
-
+          </a>{" "}
+        </div>
+        <div className="footer--row-column">
+          {" "}
           <a
             href="mailto: ggiosweb@gmail.com"
             className="footer--row-column-link"
@@ -237,7 +77,7 @@ function Footer() {
           >
             Gmail
             <img src={Gmail} alt="" style={{ width: "1em", height: "1em" }} />
-          </a>
+          </a>{" "}
         </div>
       </div>
     </div>
