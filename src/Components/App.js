@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter basename="/gflix">
       <div className="App">
-        <Navbar />
+        <Route component={Navbar} />
 
         {ROUTES.map((route, i) => (
           <Route exact path={route.path} component={route.component} key={i} />

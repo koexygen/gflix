@@ -1,6 +1,6 @@
 import "./SignUp.scss";
 
-const SignUp = () => {
+const SignUp = (props) => {
   return <h1>hi from SignUp</h1>;
 };
 

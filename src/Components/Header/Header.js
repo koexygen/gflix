@@ -2,7 +2,6 @@ import "./Header.scss";
 import TryBanner from "./TryBanner";
 
 function Header({ children }) {
-  console.log(children);
   return (
     <div className="header">
       <TryBanner />
