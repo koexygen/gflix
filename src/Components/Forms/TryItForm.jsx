@@ -9,7 +9,7 @@ function TryItForm() {
         Ready to watch? Enter your email to create or restart your membership.
       </h3>
       <div className="input-btn">
-        <div className="input-label">
+        <div className="input-label" >
           <input
             type="email"
             id="email"
