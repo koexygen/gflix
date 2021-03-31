@@ -21,7 +21,7 @@ function TryItForm() {
             Email address
           </label>
         </div>
-        <Link className="try-button" to="/sign-up">
+        <Link className="try-button" to="/signup">
           Try 30 Days Free <img src={RightArrow} alt="Try Now" />
         </Link>
       </div>
