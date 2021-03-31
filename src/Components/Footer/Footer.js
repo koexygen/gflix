@@ -16,6 +16,7 @@ function Footer() {
             href="https://github.com/koexygen"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Github <FaGithub style={{ fill: "#fff" }} />
           </a>
@@ -23,6 +24,7 @@ function Footer() {
             href="https://www.linkedin.com/in/gio-chomakhashvili-a739911b9/"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             LinkedIn <FaLinkedin style={{ fill: "#0e76a8" }} />
           </a>
@@ -30,6 +32,7 @@ function Footer() {
             href="https://www.facebook.com/thekoexygen/"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Facebook <FaFacebook style={{ fill: "#4267B2" }} />
           </a>
@@ -37,6 +40,7 @@ function Footer() {
             href="https://www.instagram.com/koexygen/"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Instagram
             <img
@@ -49,6 +53,7 @@ function Footer() {
             href="https://api.whatsapp.com/send?phone=995558888884&text=Hey%20Gio%2C%20"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             WhatsApp <FaWhatsapp style={{ fill: "#25D366" }} />
           </a>
@@ -57,6 +62,7 @@ function Footer() {
             href="mailto: ggiosweb@gmail.com"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Gmail
             <img src={Gmail} alt="" style={{ width: "1em", height: "1em" }} />
@@ -67,6 +73,7 @@ function Footer() {
             href="https://github.com/koexygen"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Github <FaGithub style={{ fill: "#fff" }} />
           </a>
@@ -74,6 +81,7 @@ function Footer() {
             href="https://www.linkedin.com/in/gio-chomakhashvili-a739911b9/"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             LinkedIn <FaLinkedin style={{ fill: "#0e76a8" }} />
           </a>
@@ -81,6 +89,7 @@ function Footer() {
             href="https://www.facebook.com/thekoexygen/"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Facebook <FaFacebook style={{ fill: "#4267B2" }} />
           </a>
@@ -88,6 +97,7 @@ function Footer() {
             href="https://www.instagram.com/koexygen/"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Instagram
             <img
@@ -100,6 +110,7 @@ function Footer() {
             href="https://api.whatsapp.com/send?phone=995558888884&text=Hey%20Gio%2C%20"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             WhatsApp <FaWhatsapp style={{ fill: "#25D366" }} />
           </a>
@@ -108,6 +119,7 @@ function Footer() {
             href="mailto: ggiosweb@gmail.com"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Gmail
             <img src={Gmail} alt="" style={{ width: "1em", height: "1em" }} />
@@ -118,6 +130,7 @@ function Footer() {
             href="https://github.com/koexygen"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Github <FaGithub style={{ fill: "#fff" }} />
           </a>
@@ -125,6 +138,7 @@ function Footer() {
             href="https://www.linkedin.com/in/gio-chomakhashvili-a739911b9/"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             LinkedIn <FaLinkedin style={{ fill: "#0e76a8" }} />
           </a>
@@ -132,6 +146,7 @@ function Footer() {
             href="https://www.facebook.com/thekoexygen/"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Facebook <FaFacebook style={{ fill: "#4267B2" }} />
           </a>
@@ -139,6 +154,7 @@ function Footer() {
             href="https://www.instagram.com/koexygen/"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Instagram
             <img
@@ -151,6 +167,7 @@ function Footer() {
             href="https://api.whatsapp.com/send?phone=995558888884&text=Hey%20Gio%2C%20"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             WhatsApp <FaWhatsapp style={{ fill: "#25D366" }} />
           </a>
@@ -159,6 +176,7 @@ function Footer() {
             href="mailto: ggiosweb@gmail.com"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Gmail
             <img src={Gmail} alt="" style={{ width: "1em", height: "1em" }} />
@@ -169,6 +187,7 @@ function Footer() {
             href="https://github.com/koexygen"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Github <FaGithub style={{ fill: "#fff" }} />
           </a>
@@ -176,6 +195,7 @@ function Footer() {
             href="https://www.linkedin.com/in/gio-chomakhashvili-a739911b9/"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             LinkedIn <FaLinkedin style={{ fill: "#0e76a8" }} />
           </a>
@@ -183,6 +203,7 @@ function Footer() {
             href="https://www.facebook.com/thekoexygen/"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Facebook <FaFacebook style={{ fill: "#4267B2" }} />
           </a>
@@ -190,6 +211,7 @@ function Footer() {
             href="https://www.instagram.com/koexygen/"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Instagram
             <img
@@ -202,6 +224,7 @@ function Footer() {
             href="https://api.whatsapp.com/send?phone=995558888884&text=Hey%20Gio%2C%20"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             WhatsApp <FaWhatsapp style={{ fill: "#25D366" }} />
           </a>
@@ -210,6 +233,7 @@ function Footer() {
             href="mailto: ggiosweb@gmail.com"
             className="footer--row-column-link"
             target="_blank"
+            rel="noreferrer"
           >
             Gmail
             <img src={Gmail} alt="" style={{ width: "1em", height: "1em" }} />
