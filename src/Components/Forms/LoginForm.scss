@@ -35,8 +35,40 @@
           color: #fff;
           height: 50px;
           line-height: 50px;
-          padding: 5px 20px;
+          padding: 16px 20px 0;
           width: 100%;
+          font-size: inherit;
+
+          &:focus {
+            outline: none;
+
+            &:invalid {
+              border-bottom: 2px solid #e87c03;
+              -webkit-border-bottom-left-radius: 4px;
+              -moz-border-radius-bottomleft: 4px;
+              border-bottom-left-radius: 4px;
+              -webkit-border-bottom-right-radius: 4px;
+              -moz-border-radius-bottomright: 4px;
+              border-bottom-right-radius: 4px;
+            }
+            &:valid {
+              border-bottom: 2px solid #5fa53f;
+              -webkit-border-bottom-left-radius: 4px;
+              -moz-border-radius-bottomleft: 4px;
+              border-bottom-left-radius: 4px;
+              -webkit-border-bottom-right-radius: 4px;
+              -moz-border-radius-bottomright: 4px;
+              border-bottom-right-radius: 4px;
+            }
+          }
+
+          &:focus ~ label,
+          &:valid ~ label {
+            top: 7px;
+            transform: translateY(0);
+            font-size: 11px;
+            color: #8c8c8c;
+          }
         }
 
         label {
@@ -44,7 +76,7 @@
           top: 50%;
           left: 20px;
           color: #8c8c8c;
-          font-size: 14px;
+          font-size: 1rem;
           -webkit-transition: font 0.1s ease, top 0.1s ease,
             -webkit-transform 0.1s ease;
           -o-transition: font 0.1s ease, top 0.1s ease, -o-transform 0.1s ease;
@@ -58,24 +90,6 @@
           -ms-transform: translateY(-50%);
           -o-transform: translateY(-50%);
           transform: translateY(-50%);
-        }
-
-        &:after {
-          border-bottom: 2px solid #e87c03;
-          -webkit-border-bottom-left-radius: 4px;
-          -moz-border-radius-bottomleft: 4px;
-          border-bottom-left-radius: 4px;
-          -webkit-border-bottom-right-radius: 4px;
-          -moz-border-radius-bottomright: 4px;
-          border-bottom-right-radius: 4px;
-          bottom: 0;
-          content: "";
-          display: block;
-          height: 6px;
-          left: 0;
-          pointer-events: none;
-          position: absolute;
-          width: 100%;
         }
       }
     }
