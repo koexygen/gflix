@@ -7,6 +7,7 @@ export const Navbar = () => (
     <Link to="/">
       <img src={Logo} alt="Gflix Logo" className="header--navbar-logo" />
     </Link>
+
     <Link to="/login" className="header--navbar-sign-in">
       Sign In
     </Link>
