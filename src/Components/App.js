@@ -5,7 +5,7 @@ import ROUTES from "../Routes";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/gflix">
       <div className="App">
         <Navbar />
 
