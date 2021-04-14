@@ -19,6 +19,7 @@ class LoginForm extends Component {
     e.preventDefault();
     let { userName, password } = this.state;
     this.props.login(userName, password);
+    this.setState({ userName: "", password: "" });
   };
 
   renderErrors = (errors = []) => {
@@ -30,8 +31,6 @@ class LoginForm extends Component {
   };
 
   render() {
-    console.log(this.state);
-
     return (
       <div className="login-form">
         <h1 className="login-form-title">Sign In</h1>
@@ -43,6 +42,7 @@ class LoginForm extends Component {
                 name="userName"
                 placeholder=" "
                 id="username"
+                value={this.state.userName}
                 required
                 onChange={(e) => this.handleChange(e)}
               />
@@ -58,6 +58,7 @@ class LoginForm extends Component {
                 placeholder=" "
                 id="password"
                 name="password"
+                value={this.state.password}
                 required
                 onChange={this.handleChange}
               />
