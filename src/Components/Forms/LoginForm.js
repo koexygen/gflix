@@ -1,11 +1,13 @@
 import "./LoginForm.scss";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { login } from "../../Actions";
 
-const LoginForm = () => {
+const LoginForm = (props) => {
   return (
     <div className="login-form">
       <h1 className="login-form-title">Sign In</h1>
-      <form autoComplete="off">
+      <form autoComplete="off" onSubmit={props.login}>
         <div className="login-form-input">
           <div className="login-form-input-group">
             <input type="email" placeholder=" " id="email" required />
@@ -41,4 +43,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default connect(null, { login })(LoginForm);
