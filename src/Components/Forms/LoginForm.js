@@ -21,6 +21,14 @@ class LoginForm extends Component {
     this.props.login(userName, password);
   };
 
+  renderErrors = (errors = []) => {
+    return errors.map((error, i) => (
+      <span className="login-form-input-error" key={i}>
+        {error}
+      </span>
+    ));
+  };
+
   render() {
     console.log(this.state);
 
@@ -40,6 +48,7 @@ class LoginForm extends Component {
               />
               <label htmlFor="username">Username</label>
             </div>
+            {this.renderErrors(this.props.errors)}
           </div>
 
           <div className="login-form-input">
@@ -54,6 +63,7 @@ class LoginForm extends Component {
               />
               <label htmlFor="password">Password</label>
             </div>
+            {this.renderErrors(this.props.errors)}
           </div>
 
           <button className="submit">Sign In</button>
@@ -78,4 +88,10 @@ class LoginForm extends Component {
   }
 }
 
-export default connect(null, { login })(LoginForm);
+const mapStateToProps = (state) => {
+  return {
+    errors: state.user.errors,
+  };
+};
+
+export default connect(mapStateToProps, { login })(LoginForm);

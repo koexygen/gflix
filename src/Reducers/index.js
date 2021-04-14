@@ -9,7 +9,6 @@ const initUser = {
 const userReducer = (state = initUser, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
-      debugger;
       return { ...state, loggedIn: true, username: action.data.userName };
     case LOGIN_FAIL:
       return { ...state, errors: [action.error] };

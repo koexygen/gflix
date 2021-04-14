@@ -13,7 +13,6 @@ export const login = (userName, password) => async (dispatch) => {
   } catch (e) {
     document.cookie = "";
     const error = e.response.data;
-    debugger;
     return dispatch({ type: LOGIN_FAIL, error });
   }
 };
