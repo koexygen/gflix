@@ -1,7 +1,7 @@
 import gflix from "../Api";
 import { LOGIN_SUCCESS, LOGIN_FAIL } from "./types";
 
-export const login = ({ userName, password }) => async (dispatch) => {
+export const login = (userName, password) => async (dispatch) => {
   try {
     const { data } = await gflix.post("users/login", {
       userName,
