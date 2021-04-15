@@ -4,6 +4,7 @@ import {
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
   SIGNUP_EMAIL,
+  SIGNUP_FAIL,
 } from "../Actions/types";
 
 const initUser = {
@@ -25,6 +26,8 @@ const userReducer = (state = initUser, action) => {
       };
     case SIGNUP_EMAIL:
       return { ...state, tryMail: action.email };
+    case SIGNUP_FAIL:
+      return { ...state, errors: [action.error] };
     default:
       return state;
   }

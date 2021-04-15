@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { logout } from "../../Actions";
 
 export const Navbar = (props) => {
-  return props.location.pathname !== "/signup" ? (
+  return (
     <div className="header--navbar">
       <Link to="/">
         <img src={Logo} alt="Gflix Logo" className="header--navbar-logo" />
@@ -26,7 +26,7 @@ export const Navbar = (props) => {
         </Link>
       )}
     </div>
-  ) : null;
+  );
 };
 
 const mapStateToProps = (state) => {

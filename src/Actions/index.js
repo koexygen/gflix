@@ -4,6 +4,8 @@ import {
   LOGIN_FAIL,
   LOGOUT_SUCCESS,
   SIGNUP_EMAIL,
+  SIGNUP_FAIL,
+  SIGNUP_SUCCESS,
 } from "./types";
 
 export const login = (userName, password) => async (dispatch) => {
@@ -18,6 +20,29 @@ export const login = (userName, password) => async (dispatch) => {
   } catch (e) {
     const error = e.response.data;
     return dispatch({ type: LOGIN_FAIL, error });
+  }
+};
+
+export const signup = (
+  userName,
+  email,
+  passwordHash,
+  passwordRepeatHash
+) => async (dispatch) => {
+  try {
+    const { data } = await gflix.post("/users/reg", {
+      userName,
+      email,
+      passwordHash,
+      passwordRepeatHash,
+    });
+
+    const loginData = login(data.userName, data.passwordHash);
+    localStorage.setItem("x-SessionID", loginData.sessionID);
+    return dispatch({ type: SIGNUP_SUCCESS, data });
+  } catch (e) {
+    const error = e.response.data;
+    return dispatch({ type: SIGNUP_FAIL, error });
   }
 };
 
