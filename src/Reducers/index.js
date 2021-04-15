@@ -1,5 +1,10 @@
 import { combineReducers } from "redux";
-import { LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../Actions/types";
+import {
+  LOGIN_FAIL,
+  LOGIN_SUCCESS,
+  LOGOUT_SUCCESS,
+  SIGNUP_EMAIL,
+} from "../Actions/types";
 
 const initUser = {
   loggedIn: !!localStorage.getItem("x-SessionID"),
@@ -18,6 +23,8 @@ const userReducer = (state = initUser, action) => {
         loggedIn: !!localStorage.getItem("x-SessionID"),
         username: null,
       };
+    case SIGNUP_EMAIL:
+      return { ...state, tryMail: action.email };
     default:
       return state;
   }

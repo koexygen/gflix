@@ -1,5 +1,10 @@
 import gflix from "../Api";
-import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_SUCCESS } from "./types";
+import {
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  LOGOUT_SUCCESS,
+  SIGNUP_EMAIL,
+} from "./types";
 
 export const login = (userName, password) => async (dispatch) => {
   try {
@@ -22,6 +27,10 @@ export const logout = (sessionID) => async (dispatch) => {
     localStorage.removeItem("x-SessionID");
     return dispatch({ type: LOGOUT_SUCCESS });
   } catch (e) {
-    debugger;
+    console.log(e.response.data);
   }
+};
+
+export const getTryMail = (email) => {
+  return { type: SIGNUP_EMAIL, email };
 };
