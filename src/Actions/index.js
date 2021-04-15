@@ -1,4 +1,5 @@
 import gflix from "../Api";
+import { useHistory } from "react-router-dom";
 import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
@@ -36,7 +37,6 @@ export const signup = (
       passwordHash,
       passwordRepeatHash,
     });
-
     return dispatch({ type: SIGNUP_SUCCESS });
   } catch (e) {
     const error = e.response.data;
