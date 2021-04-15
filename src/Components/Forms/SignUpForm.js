@@ -17,6 +17,7 @@ class SignUp extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+
     debugger;
     let { userName, password, email } = this.state;
     let passwordHash = password;

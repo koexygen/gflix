@@ -30,16 +30,14 @@ export const signup = (
   passwordRepeatHash
 ) => async (dispatch) => {
   try {
-    const { data } = await gflix.post("/users/reg", {
+    await gflix.post("/users/reg", {
       userName,
       email,
       passwordHash,
       passwordRepeatHash,
     });
 
-    const loginData = login(data.userName, data.passwordHash);
-    localStorage.setItem("x-SessionID", loginData.sessionID);
-    return dispatch({ type: SIGNUP_SUCCESS, data });
+    return dispatch({ type: SIGNUP_SUCCESS });
   } catch (e) {
     const error = e.response.data;
     return dispatch({ type: SIGNUP_FAIL, error });
