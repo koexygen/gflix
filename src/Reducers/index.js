@@ -8,7 +8,7 @@ import {
 } from "../Actions/types";
 
 const initUser = {
-  loggedIn: !!localStorage.getItem("x-SessionID"),
+  loggedIn: localStorage.getItem("x-SessionID") !== null && "undefined",
   username: null,
 };
 
@@ -21,7 +21,7 @@ const userReducer = (state = initUser, action) => {
     case LOGOUT_SUCCESS:
       return {
         ...state,
-        loggedIn: !!localStorage.getItem("x-SessionID"),
+        loggedIn: localStorage.getItem("x-SessionID") !== null && "undefined",
         username: null,
       };
     case SIGNUP_EMAIL:
