@@ -2,26 +2,58 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
-const UserRedirect = ({ loggedIn, redirectPath, children, ...rest }) => (
-  <Route
-    {...rest}
-    render={({ location }) => {
-      if (loggedIn) {
-        return (
-          <Redirect
-            to={{
-              pathname: redirectPath,
-              from: location.path,
-            }}
-          />
-        );
-      } else {
-        return children();
-      }
-    }}
-  />
-);
+const _UserRedirect = ({ loggedIn, redirectPath, children, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={() => {
+        if (!loggedIn) {
+          return children;
+        } else {
+          return (
+            <Redirect
+              to={{
+                pathname: redirectPath,
+              }}
+            />
+          );
+        }
+      }}
+    />
+  );
+};
 
-const mapStateToProps = (state) => ({ loggedIn: state.user.loggedIn });
+const _ProtectedRoute = ({ loggedIn, children, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={({ location }) => {
+        if (loggedIn) {
+          return children;
+        }
 
-export default connect(mapStateToProps)(UserRedirect);
+        if (!loggedIn) {
+          return (
+            <Redirect
+              to={{
+                pathname: "/login",
+                state: { from: location },
+              }}
+            />
+          );
+        }
+
+        return null;
+      }}
+    />
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    loggedIn: state.user.loggedIn,
+  };
+};
+
+export const UserRedirect = connect(mapStateToProps)(_UserRedirect);
+export const ProtectedRoute = connect(mapStateToProps)(_ProtectedRoute);

@@ -1,25 +1,4 @@
-import LandingPage from "./Components/LandingPage/LandingPage";
-import Browse from "./Components/Browse/Browse";
-import Login from "./Components/Login/Login";
-import SignUp from "./Components/SignUp/SignUp";
-
-const ROUTES = [
-  {
-    path: "/",
-    component: LandingPage,
-  },
-  {
-    path: "/browse",
-    component: Browse,
-  },
-  {
-    path: "/login",
-    component: Login,
-  },
-  {
-    path: "/signup",
-    component: SignUp,
-  },
-];
-
-export default ROUTES;
+export const LANDING = "/";
+export const BROWSE = "/browse";
+export const SIGN_UP = "/signup";
+export const SIGN_IN = "/login";
