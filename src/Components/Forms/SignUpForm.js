@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./LoginForm.scss";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { signup } from "../../Actions";
 
@@ -18,11 +18,8 @@ class SignUp extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    debugger;
     let { userName, password, email } = this.state;
-    let passwordHash = password;
-
-    this.props.signup(userName, email, password, passwordHash);
+    this.props.signup(userName, email, password, password);
   };
 
   renderErrors = (errors) => {
@@ -34,6 +31,8 @@ class SignUp extends Component {
   };
 
   render() {
+    if (this.props.redirectTo) return <Redirect to={this.props.redirectTo} />;
+
     return (
       <div className="login-form">
         <h1 className="login-form-title">Sign Up</h1>
@@ -108,6 +107,7 @@ class SignUp extends Component {
 const mapStateToProps = (state) => {
   return {
     errors: state.user.errors,
+    redirectTo: state.user.redirectTo,
   };
 };
 

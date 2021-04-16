@@ -5,6 +5,7 @@ import {
   LOGOUT_SUCCESS,
   SIGNUP_EMAIL,
   SIGNUP_FAIL,
+  SIGNUP_SUCCESS,
 } from "../Actions/types";
 
 const initUser = {
@@ -28,6 +29,8 @@ const userReducer = (state = initUser, action) => {
       return { ...state, tryMail: action.email };
     case SIGNUP_FAIL:
       return { ...state, errors: [action.error] };
+    case SIGNUP_SUCCESS:
+      return { ...state, redirectTo: action.redirect };
     default:
       return state;
   }

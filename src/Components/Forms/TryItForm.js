@@ -35,7 +35,7 @@ const TryItForm = ({ getTryMail }) => {
           </label>
         </div>
         <button type="submit" className="try-button">
-          Try 30 Days Free <img src={RightArrow} alt="Try Now" />
+          Get started <img src={RightArrow} alt="Try Now" />
         </button>
       </div>
     </form>

@@ -36,7 +36,7 @@ export const signup = (
       passwordHash,
       passwordRepeatHash,
     });
-    return dispatch({ type: SIGNUP_SUCCESS });
+    return dispatch({ type: SIGNUP_SUCCESS, redirect: "/browse" });
   } catch (e) {
     const error = e.response.data;
     return dispatch({ type: SIGNUP_FAIL, error });
