@@ -3,23 +3,18 @@ import Logo from "../../Assets/images/gflix-logo.png";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../../Actions";
+import NavBarLeft from "./NavBarLeft";
+import NavBarRight from "./NavBarRight";
 
 export const Navbar = (props) => {
   return (
     <div className="header--navbar">
-      <Link to="/">
-        <img src={Logo} alt="Gflix Logo" className="header--navbar-logo" />
-      </Link>
-
+      <img src={Logo} alt="Gflix Logo" className="header--navbar-logo" />
       {props.loggedIn ? (
-        <button
-          className="header--navbar-sign-in"
-          onClick={() => {
-            props.logout(localStorage.getItem("x-SessionID"));
-          }}
-        >
-          Logout
-        </button>
+        <>
+          <NavBarLeft />
+          <NavBarRight />
+        </>
       ) : (
         <Link to="/login" className="header--navbar-sign-in">
           Sign In
