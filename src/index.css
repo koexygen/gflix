@@ -61,3 +61,11 @@ body {
   background-color: var(--bg-color);
 }
 
+a {
+  font-weight: 700;
+  text-decoration: none;
+  display: block;
+  text-transform: none;
+  width: 100%;
+  color: #fff;
+}

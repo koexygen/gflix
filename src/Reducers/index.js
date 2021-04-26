@@ -6,6 +6,7 @@ import {
   PROFILE_PICK_SUCCESS,
   SIGNUP_EMAIL,
   SIGNUP_FAIL,
+  PROFILE_CHANGE_SUCCESS,
 } from "../Actions/types";
 
 const initUser = {
@@ -33,6 +34,8 @@ const userReducer = (state = initUser, action) => {
       return { ...state, errors: [action.error] };
     case PROFILE_PICK_SUCCESS:
       return { ...state, pickedProfile: action.pickedProfile };
+    case PROFILE_CHANGE_SUCCESS:
+      return { ...state, pickedProfile: null };
 
     default:
       return state;

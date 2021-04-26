@@ -7,6 +7,7 @@ import {
   SIGNUP_FAIL,
   SIGNUP_SUCCESS,
   PROFILE_PICK_SUCCESS,
+  PROFILE_CHANGE_SUCCESS,
 } from "./types";
 
 export const login = (userName, password) => async (dispatch) => {
@@ -45,7 +46,8 @@ export const signup = (
   }
 };
 
-export const logout = (sessionID) => async (dispatch) => {
+export const logout = () => async (dispatch) => {
+  const sessionID = localStorage.getItem("x-SessionID");
   try {
     await gflix.get(`users/logout/${sessionID}`);
     localStorage.removeItem("x-SessionID");
@@ -66,6 +68,15 @@ export const pickProfile = (pickedProfile) => {
     localStorage.setItem("pickedProfile", pickedProfile);
 
     return { type: PROFILE_PICK_SUCCESS, pickedProfile };
+  } catch (e) {
+    debugger;
+  }
+};
+
+export const changeProfile = () => {
+  try {
+    localStorage.removeItem("pickedProfile");
+    return { type: PROFILE_CHANGE_SUCCESS };
   } catch (e) {
     debugger;
   }

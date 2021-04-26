@@ -87,12 +87,13 @@
       width: 181px;
       margin-left: 0;
       padding: 0;
-      background-color: lightgrey;
+      background-color: #1f1f1fe6;
 
       &-profiles {
         height: auto;
         padding: 10px 0 5px 0;
         overflow: hidden;
+        margin: 0;
 
         &-item {
           line-height: 32px;
@@ -133,7 +134,30 @@
               vertical-align: middle;
               display: inline-block;
               white-space: pre;
+              color: white;
             }
+          }
+        }
+      }
+
+      &-menu {
+        padding: 10px 0;
+        border-top: solid 1px rgba(255, 255, 255, 0.25);
+        margin: 0;
+
+        &-item {
+          padding: 5px 10px;
+          display: block;
+          font-size: 13px;
+          line-height: 16px;
+
+          a {
+            font-weight: 700;
+            text-decoration: none;
+            display: block;
+            text-transform: none;
+            width: 100%;
+            color: #fff;
           }
         }
       }

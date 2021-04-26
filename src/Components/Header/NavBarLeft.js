@@ -5,10 +5,10 @@ const NavBarLeft = () => {
   return (
     <ul className="navbar-left">
       <li className="navbar-left-item">
-        <Link>Home</Link>
+        <Link to="">Home</Link>
       </li>
       <li className="navbar-left-item">
-        <Link>My List</Link>
+        <Link to="">My List</Link>
       </li>
     </ul>
   );
