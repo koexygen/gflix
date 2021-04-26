@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ProfilePick.scss";
 import LoadingGif from "../../Assets/images/loading.gif";
-import { connect } from "react-redux";
-import { pickProfile } from "../../Actions";
 
 const ProfilePick = (props) => {
   const [loading, setLoading] = useState(true);
@@ -28,6 +26,7 @@ const ProfilePick = (props) => {
               className="profile-pick-list-item"
               onClick={() => {
                 props.pickProfile(props.username);
+                props.setLoading(true);
               }}
             >
               <img
@@ -50,4 +49,4 @@ const ProfilePick = (props) => {
   );
 };
 
-export default connect(null, { pickProfile })(ProfilePick);
+export default ProfilePick;
