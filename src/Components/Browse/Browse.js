@@ -6,16 +6,15 @@ import Loading from "../extras/Loading";
 import Boy from "../../Assets/images/avatars/netflix-avatar.png";
 
 function Browse(props) {
-  const [profile, setProfile] = useState(props.user);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 1500);
-  }, [profile.username]);
+  }, [props.user.username]);
 
-  return profile.username ? (
+  return props.user.pickedProfile ? (
     <>
       {loading ? <Loading profileImg={Boy} /> : null}
       <div className="browse">
@@ -23,13 +22,12 @@ function Browse(props) {
       </div>
     </>
   ) : (
-    <ProfilePick profileImg={Boy} />
+    <ProfilePick profileImg={Boy} username={props.user.username} />
   );
 }
 
 const mapStateToProps = (state) => {
   return { user: state.user };
-  // return { user: { username: "Gio" } };
 };
 
 export default connect(mapStateToProps)(Browse);

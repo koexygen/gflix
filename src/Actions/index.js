@@ -6,6 +6,7 @@ import {
   SIGNUP_EMAIL,
   SIGNUP_FAIL,
   SIGNUP_SUCCESS,
+  PROFILE_PICK_SUCCESS,
 } from "./types";
 
 export const login = (userName, password) => async (dispatch) => {
@@ -16,6 +17,7 @@ export const login = (userName, password) => async (dispatch) => {
     });
 
     localStorage.setItem("x-SessionID", data.sessionID);
+    localStorage.setItem("username", data.userName);
     return dispatch({ type: LOGIN_SUCCESS, data });
   } catch (e) {
     const error = e.response.data;
@@ -47,6 +49,8 @@ export const logout = (sessionID) => async (dispatch) => {
   try {
     await gflix.get(`users/logout/${sessionID}`);
     localStorage.removeItem("x-SessionID");
+    localStorage.removeItem("username");
+    localStorage.removeItem("pickedProfile");
     return dispatch({ type: LOGOUT_SUCCESS });
   } catch (e) {
     console.log(e.response.data);
@@ -55,4 +59,14 @@ export const logout = (sessionID) => async (dispatch) => {
 
 export const getTryMail = (email) => {
   return { type: SIGNUP_EMAIL, email };
+};
+
+export const pickProfile = (pickedProfile) => {
+  try {
+    localStorage.setItem("pickedProfile", pickedProfile);
+
+    return { type: PROFILE_PICK_SUCCESS, pickedProfile };
+  } catch (e) {
+    debugger;
+  }
 };

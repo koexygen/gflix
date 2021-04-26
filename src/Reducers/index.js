@@ -3,13 +3,15 @@ import {
   LOGIN_FAIL,
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
+  PROFILE_PICK_SUCCESS,
   SIGNUP_EMAIL,
   SIGNUP_FAIL,
 } from "../Actions/types";
 
 const initUser = {
   loggedIn: localStorage.getItem("x-SessionID") !== (null && "undefined"),
-  username: null,
+  username: localStorage.getItem("username"),
+  pickedProfile: localStorage.getItem("pickedProfile"),
 };
 
 const userReducer = (state = initUser, action) => {
@@ -23,11 +25,14 @@ const userReducer = (state = initUser, action) => {
         ...state,
         loggedIn: localStorage.getItem("x-SessionID") !== null && "undefined",
         username: null,
+        pickedProfile: null,
       };
     case SIGNUP_EMAIL:
       return { ...state, tryMail: action.email };
     case SIGNUP_FAIL:
       return { ...state, errors: [action.error] };
+    case PROFILE_PICK_SUCCESS:
+      return { ...state, pickedProfile: action.pickedProfile };
 
     default:
       return state;
