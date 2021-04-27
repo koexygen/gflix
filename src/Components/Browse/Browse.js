@@ -48,7 +48,7 @@ function Browse(props) {
           <div className="browse--header-shadows" />
         </div>
 
-        <Section />
+        <Section tall />
       </div>
     </>
   ) : (

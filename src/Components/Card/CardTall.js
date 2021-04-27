@@ -1,7 +1,7 @@
-import "./Card.scss";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import "./CardTall.scss";
 
-const Card = (props) => {
+const CardTall = (props) => {
   const [hover, setHover] = useState(false);
 
   const handleEnter = (e) => {
@@ -18,18 +18,18 @@ const Card = (props) => {
 
   return hover ? (
     <div
-      className="card"
+      className="card-tall"
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
       style={{ background: "red" }}
     ></div>
   ) : (
     <div
-      className="card"
+      className="card-tall"
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     ></div>
   );
 };
 
-export default Card;
+export default CardTall;
