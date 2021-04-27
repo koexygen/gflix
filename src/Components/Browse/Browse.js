@@ -7,6 +7,7 @@ import Boy from "../../Assets/images/avatars/netflix-avatar.png";
 import dotaCover from "../../Assets/images/dota.png";
 import dotaText from "../../Assets/images/dota-text.png";
 import { pickProfile } from "../../Actions";
+import Section from "../Section/Section";
 
 function Browse(props) {
   const [loading, setLoading] = useState(true);
@@ -46,6 +47,8 @@ function Browse(props) {
           </div>
           <div className="browse--header-shadows" />
         </div>
+
+        <Section />
       </div>
     </>
   ) : (

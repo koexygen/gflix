@@ -1,0 +1,25 @@
+.section {
+  width: 100%;
+  opacity: 1;
+
+  &--inner {
+    transition: 250ms transform;
+    font-size: 0;
+    white-space: nowrap;
+    margin: 46.875px 0;
+    padding-bottom: 10px;
+
+    &:hover {
+      transform: translate3d(-62.5px, 0, 0);
+    }
+
+    &:hover .card {
+      opacity: 0.3;
+    }
+
+    &:hover .card:hover {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+  }
+}
