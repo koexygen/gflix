@@ -1,4 +1,5 @@
 import gflix from "../Api";
+import axios from "axios";
 import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
@@ -84,7 +85,7 @@ export const changeProfile = () => {
     localStorage.removeItem("pickedProfile");
     return { type: PROFILE_CHANGE_SUCCESS };
   } catch (e) {
-    debugger;
+    console.log(e);
   }
 };
 
@@ -113,14 +114,3 @@ export const getAllContent = () => async (dispatch) => {
 //     console.log(e);
 //   }
 // };
-
-export const getContent = async (ID) => {
-  try {
-    const { data } = await gflix.post(`content/get-by-id/${ID}`, ID);
-
-    return data;
-  } catch (e) {
-    debugger;
-    console.log(e);
-  }
-};

@@ -1,7 +1,7 @@
 import "./Section.scss";
 import Card from "../Card/Card";
 import CardTall from "../Card/CardTall";
-import { getContent } from "../../Actions";
+import { getContent } from "../../Api";
 
 const Section = (props) => {
   if (props.allContent) {

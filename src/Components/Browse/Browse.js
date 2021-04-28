@@ -15,7 +15,6 @@ function Browse(props) {
   useEffect(() => {
     if (!props.allContent) {
       props.getAllContent();
-      // props.getContent("3c01a12c-4dcb-41e5-adfc-23fba729ebec");
     }
 
     setTimeout(() => {
