@@ -1,5 +1,5 @@
 import gflix from "../Api";
-import axios from "axios";
+
 import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
@@ -10,7 +10,6 @@ import {
   PROFILE_PICK_SUCCESS,
   PROFILE_CHANGE_SUCCESS,
   GET_ALL_CONTENT_SUCCESS,
-  GET_CONTENT_SUCCESS,
 } from "./types";
 
 export const login = (userName, password) => async (dispatch) => {

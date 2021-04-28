@@ -11,10 +11,8 @@
 
     &-cover-img {
       position: absolute;
-      background-position: center center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      background-size: cover;
+      object-fit: cover;
+      object-position: right center;
       left: 0;
       right: 0;
       top: 0;

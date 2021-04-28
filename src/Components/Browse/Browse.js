@@ -13,10 +13,11 @@ function Browse(props) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!props.allContent) {
-      props.getAllContent();
-    }
+    const getAllContent = props.getAllContent;
+    getAllContent();
+  }, [props.user.loggedIn, props.getAllContent]);
 
+  useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 1000);
