@@ -7,6 +7,8 @@ import {
   SIGNUP_EMAIL,
   SIGNUP_FAIL,
   PROFILE_CHANGE_SUCCESS,
+  GET_ALL_CONTENT_SUCCESS,
+  GET_CONTENT_SUCCESS,
 } from "../Actions/types";
 
 const initUser = {
@@ -42,6 +44,18 @@ const userReducer = (state = initUser, action) => {
   }
 };
 
+const contentReducer = (state = {}, action) => {
+  switch (action.type) {
+    case GET_ALL_CONTENT_SUCCESS:
+      return { ...state, allContent: action.data };
+    case GET_CONTENT_SUCCESS:
+      return { ...state, singles: action.data };
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   user: userReducer,
+  content: contentReducer,
 });

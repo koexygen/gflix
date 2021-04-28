@@ -6,16 +6,21 @@ import Loading from "../extras/Loading";
 import Boy from "../../Assets/images/avatars/netflix-avatar.png";
 import dotaCover from "../../Assets/images/dota.png";
 import dotaText from "../../Assets/images/dota-text.png";
-import { pickProfile } from "../../Actions";
+import { pickProfile, getAllContent } from "../../Actions";
 import Section from "../Section/Section";
 
 function Browse(props) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!props.allContent) {
+      props.getAllContent();
+      // props.getContent("3c01a12c-4dcb-41e5-adfc-23fba729ebec");
+    }
+
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 1000);
   }, [props.user.pickedProfile]);
 
   return props.user.pickedProfile ? (
@@ -48,7 +53,7 @@ function Browse(props) {
           <div className="browse--header-shadows" />
         </div>
 
-        <Section tall />
+        <Section tall allContent={props.allContent} />
       </div>
     </>
   ) : (
@@ -62,7 +67,10 @@ function Browse(props) {
 }
 
 const mapStateToProps = (state) => {
-  return { user: state.user };
+  return { user: state.user, allContent: state.content.allContent };
 };
 
-export default connect(mapStateToProps, { pickProfile })(Browse);
+export default connect(mapStateToProps, {
+  pickProfile,
+  getAllContent,
+})(Browse);
