@@ -3,14 +3,18 @@ import "./Browse.scss";
 import ProfilePick from "../ProfilePick/ProfilePick";
 import { connect } from "react-redux";
 import Loading from "../extras/Loading";
+import { pickProfile, getAllContent } from "../../Actions";
+import Section from "../Section/Section";
 import Boy from "../../Assets/images/avatars/netflix-avatar.png";
 import dotaCover from "../../Assets/images/dota.png";
 import dotaText from "../../Assets/images/dota-text.png";
-import { pickProfile, getAllContent } from "../../Actions";
-import Section from "../Section/Section";
+import { VscMute, VscUnmute } from "react-icons/all";
+import { IconContext } from "react-icons";
 
 function Browse(props) {
   const [loading, setLoading] = useState(true);
+  const [playCoverVideo, setPlayCoverVideo] = useState(false);
+  const [coverMuted, setCoverMuted] = useState(false);
 
   useEffect(() => {
     const getAllContent = props.getAllContent;
@@ -23,6 +27,34 @@ function Browse(props) {
     }, 1000);
   }, [props.user.pickedProfile]);
 
+  const renderHeaderVideo = () => {
+    return (
+      <div>
+        <video
+          className="browse--header-cover-video"
+          poster={dotaCover}
+          src="https://hoovieslibs.b-cdn.net/gflix/dota-trailer.mp4"
+          muted={coverMuted}
+          preload="true"
+          loop
+          autoPlay
+        />
+        <IconContext.Provider
+          value={{
+            color: "white",
+            className: "browse--header-icon-speaker",
+          }}
+        >
+          {coverMuted ? (
+            <VscMute onClick={() => setCoverMuted(!coverMuted)} />
+          ) : (
+            <VscUnmute onClick={() => setCoverMuted(!coverMuted)} />
+          )}
+        </IconContext.Provider>
+      </div>
+    );
+  };
+
   return props.user.pickedProfile ? (
     <>
       {loading ? <Loading profileImg={Boy} loading={loading} /> : null}
@@ -32,7 +64,13 @@ function Browse(props) {
             src={dotaCover}
             alt="dota"
             className="browse--header-cover-img"
+            onMouseOver={() =>
+              setTimeout(function () {
+                setPlayCoverVideo(true);
+              }, 3000)
+            }
           />
+          {playCoverVideo ? renderHeaderVideo() : null}
           <div className="browse--header-feature">
             <div className="browse--header-feature-poster">
               <img src={dotaText} alt="dota info" />
