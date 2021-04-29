@@ -1,63 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./CardTall.scss";
 
 const CardTall = ({ card }) => {
   const [hover, setHover] = useState(false);
+  let videoTimeOut;
 
   const handleEnter = (e) => {
     setHover(true);
-    let event = e;
 
-    setTimeout(() => {
-      // debugger;
-      // event.target.play();
-    }, 500);
+    videoTimeOut = setTimeout(() => {
+      if (hover) e.target.play();
+    }, 700);
   };
 
   const handleLeave = (e) => {
+    clearTimeout(videoTimeOut);
     setHover(false);
-    let event = e;
-
-    setTimeout(() => {
-      // event.target.pause();
-    }, 500);
+    e.target.load();
   };
 
-  useEffect(() => {
-    console.log(hover);
-  }, [hover]);
-
-  return hover ? (
+  return (
     <div
       className="card-tall"
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      style={{ transform: "scale(1.2)" }}
     >
       <div className="card-tall-content">
-        {/*<div className="card-tall-content-img">*/}
-        {/*  <img src={card.poster} alt={card.title} />*/}
-        {/*</div>*/}
         <div className="card-tall-content-video">
           <video
-            autoPlay
             poster={card.poster}
-            src={card.trailerUrl}
-            onMouseOver={(event) => event.target.play()}
-            onMouseOut={(event) => event.target.pause()}
+            src={card.trailer}
+            onMouseOver={handleEnter}
+            onMouseOut={handleLeave}
           />
-        </div>
-      </div>
-    </div>
-  ) : (
-    <div
-      className="card-tall"
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
-    >
-      <div className="card-tall-content">
-        <div className="card-tall-content-img">
-          <img src={card.poster} alt={card.title} />
         </div>
       </div>
     </div>
