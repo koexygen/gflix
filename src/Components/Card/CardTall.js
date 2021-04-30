@@ -6,9 +6,11 @@ const CardTall = ({ card }) => {
   const [hover, setHover] = useState(false);
   const [playing, setPlaying] = useState(false);
 
-  const playVideo = () => (
-    <Play url={card.trailer} poster={card.poster} setPlaying={setPlaying} />
-  );
+  const playVideo = (e) => {
+    return (
+      <Play url={card.trailer} poster={card.poster} setPlaying={setPlaying} />
+    );
+  };
 
   return (
     <>
@@ -17,7 +19,10 @@ const CardTall = ({ card }) => {
         className="card-tall"
         onMouseOver={() => setHover(true)}
         onMouseOut={() => setHover(false)}
-        onClick={() => setPlaying(true)}
+        onClick={(e) => {
+          playVideo(e);
+          setPlaying(true);
+        }}
       >
         <div className="card-tall-content">
           <div className="card-tall-content-img">

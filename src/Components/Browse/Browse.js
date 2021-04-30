@@ -14,6 +14,7 @@ import { IconContext } from "react-icons";
 function Browse(props) {
   const [loading, setLoading] = useState(true);
   const [playCoverVideo, setPlayCoverVideo] = useState(false);
+  const [coverPlayed, setCoverPlayed] = useState(false);
   const [coverMuted, setCoverMuted] = useState(false);
 
   useEffect(() => {
@@ -58,17 +59,21 @@ function Browse(props) {
   return props.user.pickedProfile ? (
     <>
       {loading ? <Loading profileImg={Boy} loading={loading} /> : null}
-      <div className="browse">
+      <div
+        className="browse"
+        onMouseOver={() => {
+          if (!coverPlayed)
+            setTimeout(function () {
+              setCoverPlayed(true);
+              setPlayCoverVideo(true);
+            }, 2000);
+        }}
+      >
         <div className="browse--header">
           <img
             src={dotaCover}
             alt="dota"
             className="browse--header-cover-img"
-            onMouseOver={() =>
-              setTimeout(function () {
-                setPlayCoverVideo(true);
-              }, 2000)
-            }
           />
           {playCoverVideo ? renderHeaderVideo() : null}
           <div className="browse--header-feature">
@@ -79,13 +84,18 @@ function Browse(props) {
               A hero with a beastly side. A princess on a quest. A world on the
               brink. Dragons are real, but all is not as it seems.
             </p>
-            <button className="browse--header-feature-play">
+            <button
+              className="browse--header-feature-play"
+              onClick={() => setPlayCoverVideo(!playCoverVideo)}
+            >
               <div className="browse--header-feature-play-svg">
                 <svg viewBox="0 0 24 24">
                   <path d="M6 4l15 8-15 8z" fill="currentColor" />
                 </svg>
               </div>
-              <span className="browse--header-feature-play-text">Play</span>
+              <span className="browse--header-feature-play-text">
+                Play/Pause
+              </span>
             </button>
           </div>
           <div className="browse--header-shadows" />
