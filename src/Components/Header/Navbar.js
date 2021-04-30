@@ -4,11 +4,14 @@ import { connect } from "react-redux";
 import { logout, changeProfile } from "../../Actions";
 import NavBarLeft from "./NavBarLeft";
 import NavBarRight from "./NavBarRight";
+import { Link } from "react-router-dom";
 
 export const Navbar = (props) => {
   return (
     <div className="header--navbar">
-      <img src={Logo} alt="Gflix Logo" className="header--navbar-logo" />
+      <Link style={{ width: "auto" }} to={props.loggedIn ? "/browse" : "/"}>
+        <img src={Logo} alt="Gflix Logo" className="header--navbar-logo" />
+      </Link>
       {props.loggedIn ? <NavBarLeft /> : null}
       <NavBarRight
         logout={props.logout}

@@ -67,7 +67,7 @@ function Browse(props) {
             onMouseOver={() =>
               setTimeout(function () {
                 setPlayCoverVideo(true);
-              }, 3000)
+              }, 2000)
             }
           />
           {playCoverVideo ? renderHeaderVideo() : null}
