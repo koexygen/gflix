@@ -10,7 +10,7 @@ import SignUp from "./SignUp/SignUp";
 
 function App() {
   return (
-    <Router basename="/gflix">
+    <Router>
       <div className="App">
         <Route component={Navbar} />
 
