@@ -94,7 +94,7 @@ function Browse(props) {
                 </svg>
               </div>
               <span className="browse--header-feature-play-text">
-                Play/Pause
+                Play/Stop
               </span>
             </button>
           </div>

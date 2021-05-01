@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const gflixApi = axios.create({
-  baseURL: "https://localhost:44354",
+  baseURL: "https://gflixapi.atlast.ge",
   headers: {
     "Content-Type": "application/json",
     "x-SessionID": localStorage.getItem("x-SessionID"),
