@@ -13,7 +13,6 @@ function App() {
     <Router>
       <div className="App">
         <Route component={Navbar} />
-
         <Switch>
           <UserRedirect redirectPath={ROUTES.BROWSE} path={ROUTES.SIGN_IN}>
             <Login />
@@ -21,6 +20,9 @@ function App() {
           <UserRedirect redirectPath={ROUTES.BROWSE} path={ROUTES.SIGN_UP}>
             <SignUp />
           </UserRedirect>
+          <ProtectedRoute path={ROUTES.BROWSE}>
+            <Browse />
+          </ProtectedRoute>
           <ProtectedRoute path={ROUTES.BROWSE}>
             <Browse />
           </ProtectedRoute>
