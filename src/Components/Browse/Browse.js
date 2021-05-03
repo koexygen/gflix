@@ -3,7 +3,7 @@ import "./Browse.scss";
 import ProfilePick from "../ProfilePick/ProfilePick";
 import { connect } from "react-redux";
 import Loading from "../extras/Loading";
-import { pickProfile, getAllContent } from "../../Actions";
+import { pickProfile, getAllContent, getWatchlist } from "../../Actions";
 import Section from "../Section/Section";
 import Boy from "../../Assets/images/avatars/netflix-avatar.png";
 import dotaCover from "../../Assets/images/dota.png";
@@ -19,8 +19,10 @@ function Browse(props) {
 
   useEffect(() => {
     const getAllContent = props.getAllContent;
+    const getWatchlist = props.getWatchlist;
     getAllContent();
-  }, [props.user.loggedIn, props.getAllContent]);
+    getWatchlist();
+  }, [props.user.loggedIn, props.getAllContent, props.getWatchlist]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -121,4 +123,5 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   pickProfile,
   getAllContent,
+  getWatchlist,
 })(Browse);

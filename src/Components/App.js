@@ -7,6 +7,7 @@ import LandingPage from "./LandingPage/LandingPage";
 import Browse from "./Browse/Browse";
 import Login from "./Login/Login";
 import SignUp from "./SignUp/SignUp";
+import Watchlist from "./Watchlist/Watchlist";
 
 function App() {
   return (
@@ -23,8 +24,8 @@ function App() {
           <ProtectedRoute path={ROUTES.BROWSE}>
             <Browse />
           </ProtectedRoute>
-          <ProtectedRoute path={ROUTES.BROWSE}>
-            <Browse />
+          <ProtectedRoute path={ROUTES.WATCHLIST}>
+            <Watchlist />
           </ProtectedRoute>
           <UserRedirect redirectPath={ROUTES.BROWSE} path={ROUTES.LANDING}>
             <LandingPage />

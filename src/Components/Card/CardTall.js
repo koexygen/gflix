@@ -3,10 +3,13 @@ import "./CardTall.scss";
 import Play from "../Play/Play";
 import { IconContext } from "react-icons";
 import { BiPlusCircle, BiMinusCircle, AiFillPlayCircle } from "react-icons/all";
+import { connect } from "react-redux";
+import { addWatchListAction, removeWatchListAction } from "../../Actions";
 
-const CardTall = ({ card }) => {
+const CardTall = ({ card, addWatchList, removeWatchList }) => {
   const [hover, setHover] = useState(false);
   const [playing, setPlaying] = useState(false);
+  const [inWatchList, setInWatchList] = useState(card.inWatchList);
 
   const playVideo = (e) => {
     return (
@@ -14,7 +17,7 @@ const CardTall = ({ card }) => {
     );
   };
 
-  const renderOverlay = () => {
+  const renderOverlay = (card) => {
     return (
       <div className="card-tall-overlay">
         <div className="card-tall-overlay-icons">
@@ -25,10 +28,15 @@ const CardTall = ({ card }) => {
             }}
           >
             <div>
-              <AiFillPlayCircle />
+              <AiFillPlayCircle
+                onClick={(e) => {
+                  playVideo(e);
+                  setPlaying(true);
+                }}
+              />
             </div>
           </IconContext.Provider>
-          {card.inWatchlist ? (
+          {inWatchList ? (
             <IconContext.Provider
               value={{
                 color: "white",
@@ -36,7 +44,12 @@ const CardTall = ({ card }) => {
               }}
             >
               <div>
-                <BiMinusCircle />
+                <BiMinusCircle
+                  onClick={(e) => {
+                    removeWatchList(card.id);
+                    setInWatchList(false);
+                  }}
+                />
               </div>
             </IconContext.Provider>
           ) : (
@@ -47,7 +60,12 @@ const CardTall = ({ card }) => {
               }}
             >
               <div>
-                <BiPlusCircle />
+                <BiPlusCircle
+                  onClick={(e) => {
+                    addWatchList(card.id);
+                    setInWatchList(true);
+                  }}
+                />
               </div>
             </IconContext.Provider>
           )}
@@ -64,10 +82,6 @@ const CardTall = ({ card }) => {
         className="card-tall"
         onMouseOver={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        onClick={(e) => {
-          playVideo(e);
-          setPlaying(true);
-        }}
       >
         <div className="card-tall-content">
           <div className="card-tall-content-img">
@@ -85,10 +99,13 @@ const CardTall = ({ card }) => {
           </div>
         </div>
 
-        {hover ? renderOverlay() : null}
+        {hover ? renderOverlay(card) : null}
       </div>
     </>
   );
 };
 
-export default CardTall;
+export default connect(null, {
+  addWatchList: addWatchListAction,
+  removeWatchList: removeWatchListAction,
+})(CardTall);

@@ -8,7 +8,7 @@ const NavBarLeft = () => {
         <Link to="">Home</Link>
       </li>
       <li className="navbar-left-item">
-        <Link to="">My List</Link>
+        <Link to="/watchlist">My List</Link>
       </li>
     </ul>
   );

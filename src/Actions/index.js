@@ -10,6 +10,9 @@ import {
   PROFILE_PICK_SUCCESS,
   PROFILE_CHANGE_SUCCESS,
   GET_ALL_CONTENT_SUCCESS,
+  GET_WATCHLIST_SUCCESS,
+  ADD_WATCHLIST_SUCCESS,
+  REMOVE_WATCHLIST_SUCCESS,
 } from "./types";
 
 export const login = (userName, password) => async (dispatch) => {
@@ -100,16 +103,34 @@ export const getAllContent = () => async (dispatch) => {
   }
 };
 
-// export const getContent = (ID) => async (dispatch) => {
-//   try {
-//     const { data } = await gflix.post(`/content/get-by-id/${ID}`, {
-//       headers: { "x-SessionID": localStorage.getItem("x-SessionID") },
-//     });
-//
-//     debugger;
-//     return dispatch({ type: GET_CONTENT_SUCCESS, data });
-//   } catch (e) {
-//     debugger;
-//     console.log(e);
-//   }
-// };
+export const getWatchlist = () => async (dispatch) => {
+  try {
+    const { data } = await gflix.post("/watch/get-all", {
+      headers: { "x-SessionID": localStorage.getItem("x-SessionID") },
+    });
+
+    return dispatch({ type: GET_WATCHLIST_SUCCESS, data });
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const addWatchListAction = (movieId) => async (dispatch) => {
+  try {
+    const { data } = await gflix.post("/watch/add", JSON.stringify(movieId));
+
+    return dispatch({ type: ADD_WATCHLIST_SUCCESS, data });
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const removeWatchListAction = (movieId) => async (dispatch) => {
+  try {
+    const { data } = await gflix.post("/watch/remove", JSON.stringify(movieId));
+
+    return dispatch({ type: REMOVE_WATCHLIST_SUCCESS, data });
+  } catch (e) {
+    console.log(e);
+  }
+};

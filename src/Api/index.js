@@ -9,16 +9,4 @@ const gflixApi = axios.create({
   maxBodyLength: 2000,
 });
 
-export const getContent = async (ID) => {
-  try {
-    const { data } = await gflixApi.post(
-      `/content/get-by-id`,
-      JSON.stringify(ID)
-    );
-    return data;
-  } catch (e) {
-    console.log(e);
-  }
-};
-
 export default gflixApi;

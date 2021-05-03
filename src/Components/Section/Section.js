@@ -4,7 +4,7 @@ import CardTall from "../Card/CardTall";
 const Section = ({ allContent, tall }) => {
   const renderCards = (cards) => {
     return cards.map((card, i) => {
-      return <CardTall card={card} key={i} />;
+      return <CardTall card={card} key={i} idx={i} />;
     });
   };
   return (

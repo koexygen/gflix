@@ -9,6 +9,9 @@ import {
   PROFILE_CHANGE_SUCCESS,
   GET_ALL_CONTENT_SUCCESS,
   GET_CONTENT_SUCCESS,
+  GET_WATCHLIST_SUCCESS,
+  REMOVE_WATCHLIST_SUCCESS,
+  ADD_WATCHLIST_SUCCESS,
 } from "../Actions/types";
 
 const initUser = {
@@ -38,6 +41,12 @@ const userReducer = (state = initUser, action) => {
       return { ...state, pickedProfile: action.pickedProfile };
     case PROFILE_CHANGE_SUCCESS:
       return { ...state, pickedProfile: null };
+    case GET_WATCHLIST_SUCCESS:
+      return { ...state, watchlist: action.data };
+    case REMOVE_WATCHLIST_SUCCESS:
+      return { ...state };
+    case ADD_WATCHLIST_SUCCESS:
+      return { ...state };
 
     default:
       return state;
