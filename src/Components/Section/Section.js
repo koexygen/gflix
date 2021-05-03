@@ -1,12 +1,18 @@
 import "./Section.scss";
 import CardTall from "../Card/CardTall";
+import Card from "../Card/Card";
 
 const Section = ({ allContent, tall }) => {
   const renderCards = (cards) => {
     return cards.map((card, i) => {
-      return <CardTall card={card} key={i} idx={i} />;
+      return tall ? (
+        <CardTall card={card} key={i} />
+      ) : (
+        <Card card={card} key={i} />
+      );
     });
   };
+
   return (
     <div
       className="section"
