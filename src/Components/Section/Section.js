@@ -18,6 +18,7 @@ const Section = ({ allContent, tall }) => {
       className="section"
       style={{ transform: `translateY(${tall ? "-25%" : "0"})` }}
     >
+      <span>Movies</span>
       <ul className="section--inner">
         {allContent ? renderCards(allContent) : null}
       </ul>

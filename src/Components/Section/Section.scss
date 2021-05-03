@@ -1,6 +1,22 @@
 .section {
   width: 100%;
   opacity: 1;
+  position: relative;
+
+  span {
+    font-size: 1.4vw;
+    color: #e5e5e5;
+    font-weight: 700;
+
+    text-decoration: none;
+    min-width: 6em;
+    display: table-cell;
+    vertical-align: bottom;
+    line-height: 1.25vw;
+    position: absolute;
+    top: -7%;
+    left: 3%;
+  }
 
   &--inner {
     transition: 250ms transform;
