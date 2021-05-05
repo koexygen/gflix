@@ -56,9 +56,9 @@ const contentReducer = (state = {}, action) => {
     case GET_WATCHLIST_SUCCESS:
       return { ...state, watchlist: action.data };
     case REMOVE_WATCHLIST_SUCCESS:
-      return { ...state };
+      return { ...state, watchlist: action.data };
     case ADD_WATCHLIST_SUCCESS:
-      return { ...state };
+      return { ...state, watchlist: action.data };
     default:
       return state;
   }

@@ -2,18 +2,19 @@ import React, { useEffect } from "react";
 import "./Watchlist.scss";
 import { connect } from "react-redux";
 import Section from "../Section/Section";
-import { getWatchlist, getAllContent } from "../../Actions";
+import { getWatchlist } from "../../Actions";
 
 const Watchlist = (props) => {
+  const getWatchList = props.getWatchlist;
+
   useEffect(() => {
-    props.getAllContent();
-  }, []);
+    getWatchList();
+  }, [getWatchList]);
 
   return (
     <div className="watchlist">
       <h1 className="watchlist-title">My List</h1>
-      {/*<Section allContent={props.watchlist} />*/}
-      {props.content ? <Section allContent={props.content} /> : null}
+      {props.watchlist ? <Section allContent={props.watchlist} /> : null}
     </div>
   );
 };
@@ -25,6 +26,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getWatchlist, getAllContent })(
-  Watchlist
-);
+export default connect(mapStateToProps, { getWatchlist })(Watchlist);

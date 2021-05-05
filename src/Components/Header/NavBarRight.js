@@ -20,7 +20,7 @@ const NavBarRight = (props) => {
                 <li className="navbar-right-profile-sub-dropdown-profiles-item">
                   <div>
                     <img src={Boy} alt="profile" />
-                    <span>Gio</span>
+                    <span>{props.user.username.toUpperCase()}</span>
                   </div>
                 </li>
                 <li

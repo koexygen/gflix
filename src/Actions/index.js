@@ -46,6 +46,9 @@ export const signup = (
       passwordHash,
       passwordRepeatHash,
     });
+
+    dispatch(login(userName, passwordHash));
+
     return dispatch({ type: SIGNUP_SUCCESS });
   } catch (e) {
     const error = e.response.data;

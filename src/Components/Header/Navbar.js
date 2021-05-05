@@ -17,6 +17,7 @@ export const Navbar = (props) => {
         logout={props.logout}
         changeProfile={props.changeProfile}
         loggedIn={props.loggedIn}
+        user={props.user}
       />
     </div>
   );
@@ -25,6 +26,7 @@ export const Navbar = (props) => {
 const mapStateToProps = (state) => {
   return {
     loggedIn: state.user.loggedIn,
+    user: state.user,
   };
 };
 
