@@ -6,11 +6,12 @@ import reportWebVitals from "./reportWebVitals";
 import { applyMiddleware, createStore } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import logger from "redux-logger";
+// import logger from "redux-logger";
 
 import reducers from "./Reducers";
 
-const middleWares = [thunk, logger];
+// const middleWares = [thunk, logger];
+const middleWares = [thunk];
 const store = createStore(reducers, applyMiddleware(...middleWares));
 
 // document.addEventListener("DOMContentLoaded", () => {
