@@ -27,4 +27,8 @@
     display: flex;
     justify-content: center;
   }
+
+  &--watchlist {
+    justify-content: flex-start;
+  }
 }

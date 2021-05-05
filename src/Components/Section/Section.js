@@ -2,7 +2,7 @@ import "./Section.scss";
 import CardTall from "../Card/CardTall";
 import Card from "../Card/Card";
 
-const Section = ({ allContent, tall }) => {
+const Section = ({ allContent, tall, watchListClass }) => {
   const renderCards = (cards) => {
     return cards.map((card, i) => {
       return tall ? (
@@ -15,11 +15,15 @@ const Section = ({ allContent, tall }) => {
 
   return (
     <div
-      className="section"
+      className={`section`}
       style={{ transform: `translateY(${tall ? "-25%" : "0"})` }}
     >
       <span>Movies</span>
-      <ul className="section--inner">
+      <ul
+        className={`section--inner  ${
+          watchListClass ? "section--watchlist" : null
+        }`}
+      >
         {allContent ? renderCards(allContent) : null}
       </ul>
     </div>

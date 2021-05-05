@@ -79,7 +79,7 @@ const CardTall = ({ card, addWatchList, removeWatchList }) => {
     <>
       {playing ? playVideo() : null}
       <div
-        className="card-tall"
+        className="card-tall card"
         onMouseOver={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >

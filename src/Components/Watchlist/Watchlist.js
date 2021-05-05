@@ -14,15 +14,16 @@ const Watchlist = (props) => {
   return (
     <div className="watchlist">
       <h1 className="watchlist-title">My List</h1>
-      {props.watchlist ? <Section allContent={props.watchlist} /> : null}
+      {props.watchlist ? (
+        <Section allContent={props.watchlist} watchListClass />
+      ) : null}
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    watchlist: state.user.watchlist,
-    content: state.content.allContent,
+    watchlist: state.content.watchlist,
   };
 };
 
